@@ -1,0 +1,48 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    
+    <!-- Username field group -->
+    <div class="form-group">
+      <label for="user">Name</label>
+      <input 
+        id="user"
+        type="text"
+        formControlName="username"
+        placeholder="Enter your name"
+      >
+      <div *ngIf="isFieldInvalid('username')" class="error-message">
+        <div *ngIf="loginForm.get('username')?.errors?.['required']">
+          Name is required
+        </div>
+        <div *ngIf="loginForm.get('username')?.errors?.['minlength']">
+          Name must be at least 2 characters
+        </div>
+        <div *ngIf="loginForm.get('username')?.errors?.['pattern']">
+          Only letters and spaces are allowed
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone number field group -->
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input 
+        id="phone"
+        type="tel"
+        formControlName="phoneNumber"
+        placeholder="Enter phone number"
+      >
+      <div *ngIf="isFieldInvalid('phoneNumber')" class="error-message">
+        <div *ngIf="loginForm.get('phoneNumber')?.errors?.['required']">
+          Phone number is required
+        </div>
+        <div *ngIf="loginForm.get('phoneNumber')?.errors?.['pattern']">
+          Please enter a valid 10-digit phone number
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div>
