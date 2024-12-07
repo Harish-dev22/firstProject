@@ -41,6 +41,13 @@ h1 {
     margin-bottom: 1.5rem; /* Space between form groups */
 }
 
+/* Label Styles */
+label {
+    font-weight: bold; /* Bold text for labels */
+    margin-bottom: 0.5rem; /* Space below the label */
+    display: block; /* Block display for labels */
+}
+
 /* Input Styles */
 input.form-control {
     width: 100%; /* Full width */
