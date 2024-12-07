@@ -46,7 +46,8 @@ export class RegisterComponent {
       user: {
         email: formValue.email!,
         password: formValue.password!,
-        username: formValue.username!
+        username: formValue.username!,
+        phone: formValue.phone!
       }
     }
 

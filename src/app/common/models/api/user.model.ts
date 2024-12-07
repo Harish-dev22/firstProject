@@ -4,6 +4,7 @@ export interface User {
     username: string;
     bio?: string;
     image?: string;
+    phone: number;
   }
   
   export interface CreateUserPayload {
@@ -11,6 +12,7 @@ export interface User {
       email: string;
       username: string;
       password: string;
+      phone: number;
     }
   }
   
@@ -18,6 +20,7 @@ export interface User {
     user: {
       email: string;
       password: string;
+      phone: number;
     }
   }
   
@@ -32,5 +35,6 @@ export interface User {
       bio?: string;
       image?: string;
       password?: string;
+      phone: number;
     }
   }

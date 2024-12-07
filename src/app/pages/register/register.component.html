@@ -30,6 +30,11 @@
               <input formControlName="password" class="form-control form-control-lg" type="password" placeholder="Password" />
               <app-error-message [form]="mainForm.controls.password"></app-error-message>
             </fieldset>
+
+            <fieldset class="form-group">
+                <input formControlName="phone" class="form-control form-control-lg" type="tel" placeholder="Phone No." />
+                <app-error-message [form]="mainForm.controls.username"></app-error-message>
+              </fieldset>
   
             <button [disabled]="!mainForm.valid" (click)="registerUser()"
                     class="btn btn-lg btn-primary pull-xs-right">Sign up</button>
