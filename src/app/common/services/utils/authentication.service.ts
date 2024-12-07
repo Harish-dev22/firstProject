@@ -14,16 +14,16 @@ export class AuthenticationService {
   }
 
   public get currentUserToken(): string {
-    return localStorage.getItem('token') || '';
+    return '';
   }
 
   public login(user: User) {
-    localStorage.setItem('token', user.token);
+    //localStorage.setItem('token', user.token);
     this._currentUser$.next(user);
   }
 
   public logout() {
-    localStorage.removeItem('token');
+    //localStorage.removeItem('token');
     this._currentUser$.next(null);
   }
 
