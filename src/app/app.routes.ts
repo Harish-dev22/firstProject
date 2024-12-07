@@ -1,15 +1,11 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { LandingComponent } from './landing/landing.component';
-import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'landing', component: LandingComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
   {
     path: '**',           // Wildcard route for invalid paths
-    redirectTo: 'login'   // Redirects to login component
+    redirectTo: 'register'   // Redirects to login component
   }
 ];
