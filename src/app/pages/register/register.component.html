@@ -15,7 +15,7 @@
             </ul>
           }
   
-          <form [formGroup]="mainForm" (ngSubmit)="registerUser()">
+          <form [formGroup]="mainForm">
 
             <div class="form-group">
                 <label for="email">Email</label>
@@ -35,7 +35,7 @@
                 <app-error-message [form]="mainForm.controls.phone"></app-error-message>
             </div>
 
-            <button [disabled]="!mainForm.valid" class="btn btn-lg btn-primary">Sign Up</button>
+            <button type="button" (click) = "registerUser()" [disabled]="!mainForm.valid" class="btn btn-lg btn-primary">Sign Up</button>
         </form>
         </div>
       </div>

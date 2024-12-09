@@ -35,12 +35,12 @@ export class RegisterComponent {
     return new FormGroup(<RegisterFormViewModel>{
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
-      username: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
     });
   }
 
   public registerUser(): void {
+    console.log("register", this.mainForm.value)
     const formValue = this.mainForm.value;
 
     const payload: CreateUserPayload = {
