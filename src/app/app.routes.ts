@@ -8,6 +8,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   {
     path: '**',           // Wildcard route for invalid paths
-    redirectTo: 'register'   // Redirects to login component
+    redirectTo: 'register'   
   }
 ];
