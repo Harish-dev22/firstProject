@@ -1,0 +1,7 @@
+.auth-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Optional background */
+}
