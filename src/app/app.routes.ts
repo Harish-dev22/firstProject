@@ -9,7 +9,7 @@ export const routes: Routes = [
     path: '',
     component: AuthLayoutComponent, // Use AuthLayout for these routes
     children: [
-        { path: '', component: RegisterComponent },
+        { path: '', redirectTo:'register', pathMatch:'full' },
         { path: 'register', component: RegisterComponent },
     ]
 },
