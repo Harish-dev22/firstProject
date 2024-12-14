@@ -55,19 +55,19 @@ export class RegisterComponent {
     
     this._router.navigateByUrl('/home')
 
-    // this._userService.registerUser(payload).subscribe({
-    //   next: () => {
-    //     this.successDisplayed.set(true);
+    this._userService.registerUser(payload).subscribe({
+      next: () => {
+        this.successDisplayed.set(true);
 
-    //     setTimeout(
-    //       () => {this._router.navigateByUrl('/login');},
-    //       2000
-    //     );
-    //   },
-    //   error: (err: HttpErrorResponse) => {
-    //     this.successDisplayed.set(false);
-    //     this.errors.set(err.error.errors);
-    //   }
-    // });
+        setTimeout(
+          () => {this._router.navigateByUrl('/login');},
+          2000
+        );
+      },
+      error: (err: HttpErrorResponse) => {
+        this.successDisplayed.set(false);
+        this.errors.set(err.error.errors);
+      }
+    });
   }
 }
