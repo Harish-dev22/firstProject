@@ -40,7 +40,6 @@ export class RegisterComponent {
   }
 
   public registerUser(): void {
-    console.log("register", this.mainForm.value)
     const formValue = this.mainForm.value;
 
     const payload: CreateUserPayload = {
