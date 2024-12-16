@@ -13,10 +13,6 @@ export class HomeComponent {
   constructor(private router : Router) {}
 
   logout() {
-    // Clear user authentication data (if applicable)
-    // For example: localStorage.removeItem('token');
-
-    // Redirect to the login page
     this.router.navigate(['/login'])
   }
 }
