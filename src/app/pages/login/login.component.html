@@ -7,20 +7,20 @@
             <a routerLink="/register">Need an account?</a>
           </p>
   
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="identifier">Email or Phone Number</label>
-              <input id="identifier" formControlName="identifier" class="form-control" placeholder="Enter your email or phone number" />
-              <app-error-message [form]="loginForm.controls[identifier]"></app-error-message>
+              <label for="email">Email or Phone Number</label>
+              <input id="email" formControlName="email" class="email-control" placeholder="Enter your email or phone number" />
+              <app-error-message [form]="mainForm.controls.email"></app-error-message>
             </div>
   
             <div class="form-group">
               <label for="password">Password</label>
               <input id="password" formControlName="password" class="form-control" type="password" placeholder="Enter your password" />
-              <app-error-message [form]="loginForm.controls.password"></app-error-message>
+              <app-error-message [form]="mainForm.controls.password"></app-error-message>
             </div>
   
-            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-lg btn-primary">Login</button>
+            <button type="submit" [disabled]="!mainForm.valid" class="btn btn-lg btn-primary">Login</button>
           </form>
         </div>
       </div>

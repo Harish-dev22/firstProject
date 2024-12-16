@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ErrorMessageComponent } from '../../shared/error-message/error-message.component';
+import { LoginFormViewModel } from '../../common/models/form/authentication-form.view-model';
+import { UserService } from '../../common/services/api/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,28 +13,33 @@ import { ErrorMessageComponent } from '../../shared/error-message/error-message.
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+export class LoginComponent {
+  public mainForm!: FormGroup<LoginFormViewModel>;;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private readonly _userService: UserService,
+    private readonly _router: Router
+  ) {
+    this.mainForm = this._constructLoginForm();
+  }
 
-  ngOnInit() {
-    this.loginForm = this.fb.group({
-      identifier: ['', [Validators.required]], // Email or Phone Number
-      password: ['', [Validators.required]]
+  private _constructLoginForm(): FormGroup<LoginFormViewModel> {
+    return new FormGroup(<LoginFormViewModel>{
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.required]),
     });
   }
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      const { identifier, password } = this.loginForm.value;
+    if (this.mainForm.valid) {
+      const {  password } = this.mainForm.value;
 
       // Implement your authentication logic here
       // For example, call an authentication service
-      console.log('Logging in with:', identifier, password);
 
       // On successful login, redirect to home or another page
-      this.router.navigate(['/home']);
+      this._router.navigate(['/home']);
     }
   }
 }
