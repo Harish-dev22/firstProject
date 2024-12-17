@@ -41,7 +41,7 @@ export class RegisterComponent {
 
   public registerUser(): void {
     const formValue = this.mainForm.value;
-
+ 
     const payload: CreateUserPayload = {
       user: {
         email: formValue.email!,

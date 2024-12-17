@@ -26,8 +26,7 @@ export class LoginComponent {
   private _constructLoginForm(): FormGroup<LoginFormViewModel> {
     return new FormGroup(<LoginFormViewModel>{
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     });
   }
 

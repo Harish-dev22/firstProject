@@ -21,7 +21,6 @@ export const routes: Routes = [
     component: LayoutComponent, // Use Layout for the Home component
     children: [
         { path: 'home', component: HomeComponent }, // Home route
-        { path: '**', redirectTo: 'register' }
         // Other routes that should use LayoutComponent can go here
     ]
 },

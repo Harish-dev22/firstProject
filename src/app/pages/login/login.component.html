@@ -10,7 +10,7 @@
           <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="email">Email or Phone Number</label>
-              <input id="email" formControlName="email" class="email-control" placeholder="Enter your email or phone number" />
+              <input id="email" formControlName="email" class="form-control" placeholder="Enter your email or phone number" />
               <app-error-message [form]="mainForm.controls.email"></app-error-message>
             </div>
   
